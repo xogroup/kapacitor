@@ -65,13 +65,13 @@ func (s *Service) SetLogLevelFromName(lvl string) error {
 func logLevelFromName(lvl string) Level {
 	var level Level
 	switch lvl {
-	case "INFO":
+	case "INFO", "info":
 		level = InfoLevel
-	case "ERROR":
+	case "ERROR", "error":
 		level = ErrorLevel
-	case "WARN":
+	case "WARN", "warn":
 		level = WarnLevel
-	case "DEBUG":
+	case "DEBUG", "debug":
 		level = DebugLevel
 	}
 
