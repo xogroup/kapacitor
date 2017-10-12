@@ -1,0 +1,18 @@
+FROM alpine:3.6
+
+RUN echo 'hosts: files dns' >> /etc/nsswitch.conf
+# RUN apk add --no-cache ca-certificates && \
+#     update-ca-certificates
+
+ENV KAPACITOR_VERSION 1.3.3
+
+COPY kapacitord /usr/bin
+COPY kapacitor.conf /etc/kapacitor/kapacitor.conf
+
+EXPOSE 9092
+
+VOLUME /var/lib/kapacitor
+
+COPY entrypoint.sh /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
+CMD ["kapacitord"]
