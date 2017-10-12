@@ -1,6 +1,7 @@
 .*.swp
 dist/*
 /build/*
+/docker-build/kapacitord
 /*.conf
 kapacitor_linux*
 kapacitord_linux*
