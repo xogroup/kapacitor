@@ -43,5 +43,4 @@ docker cp "$dataname:$HOME_DIR/go/src/github.com/influxdata/kapacitor/build" \
 docker rm -v $dataname
 
 cp build/kapacitord docker-build/kapacitord
-docker build -f docker-build/Dockerfile.alpine -t xogroup/kapacitor:alpine-1.3 ./docker-build
 docker build -f docker-build/Dockerfile.debian -t xogroup/kapacitor:1.3 ./docker-build
